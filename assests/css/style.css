@@ -1,0 +1,93 @@
+@font-face {
+  font-family: Inter;
+  src: url("./assests/Inter_24pt-Regular.ttf");
+}
+@font-face {
+  font-family: Canela;
+  src: url("./assests/fonnts.com-Canela-Bold-Trial.oft");
+}
+
+p { 
+  font-family: "Inter", sans-serif !important;
+}
+h1 {
+  font-family: "Canela", sans-serif !important;
+}
+.glide__arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+/* Custom Keyframes for the scrolling animation */
+/* @keyframes scrolling {
+  0% {
+    transform: translateX(80%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+/* Applying the animation */
+/* .animate-scrolling {
+  animation: scrolling 20s linear infinite;
+} */
+
+/* Ensure consistent image height and filter */
+/* .logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(200%);
+} */
+
+/* Custom backdrop filter */
+/* .backdrop-blur-custom {
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+} */ */
+ @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* === Base slider animation === */
+    .slider-track {
+      display: flex;
+      width: 200%; /* doubled for seamless looping */
+      animation: scroll 20s linear infinite;
+      will-change: transform; /* Optimizes performance */
+    }
+
+    /* === Smooth hover pause effect === */
+    .slider-track:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+
+    /* === Responsive Speed Control === */
+    @media (max-width: 768px) {
+      .slider-track {
+        animation-duration: 30s; /* slower on mobile */
+      }
+    }
+
+    /* === Logo styles === */
+    .logo-img {
+      transition: all 0.4s ease;
+      filter: brightness(0.8) grayscale(100%);
+    }
+
+    /* On hover, show full color and increase brightness */
+    .logo-img:hover {
+      filter: brightness(1.1) grayscale(0%);
+      transform: scale(1.05);
+    }
